@@ -6,7 +6,8 @@ ALLOWED_HOSTS= [os.environ['WEBSITE_HOSTNAME']]
 
 CSRF_TRUSTED_ORIGINS= ['https://'+os.environ['WEBSITE_HOSTNAME']]
 DEBUG=False
-
+SECRET_KEY = os.environ['MY_SECRET_KEY'] #dodamy manualnie na azure ta zmienna
+ 
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -50,4 +51,5 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = BASE_DIR/'staticfiles'
+#STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
