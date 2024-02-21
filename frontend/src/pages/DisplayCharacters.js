@@ -5,10 +5,11 @@ const DisplayCharacter= ()=>{
 let [characters, setCharacters]= useState(null);
 
 let getCharacters = async() =>{
-    let response= await fetch('http://127.0.0.1:8000/api/')
+    let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/')
     let data= response.json()
     setCharacters(data);
     console.log(data);
+    //console.log(import.meta.env.MODE);
 }
 
 useEffect(()=>{
