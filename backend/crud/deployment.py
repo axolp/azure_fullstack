@@ -25,9 +25,9 @@ MIDDLEWARE = [
 ]
 
 #Wracam gdy bede wiedzial adres strony
-#CORS_ALLOWED_ORIGINS= [
-#
-#]
+CORS_ALLOWED_ORIGINS= [
+'https://happy-island-0e3f99610.4.azurestaticapps.net/'
+]
 
 STORAGES = {
     "default": {
@@ -51,5 +51,5 @@ DATABASES = {
     }
 }
 
-#STATIC_ROOT = BASE_DIR/'staticfiles'
+#STATIC_ROOT = BASE_DIR/'staticfiles' JEBAC TO
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
