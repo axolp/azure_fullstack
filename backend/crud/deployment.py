@@ -25,7 +25,7 @@ MIDDLEWARE = [
 ]
 # to na azure 'https://happy-island-0e3f99610.4.azurestaticapps.net/'
 #Wracam gdy bede wiedzial adres strony
-CORS_ALLOWED_ORIGINS= ['*']
+CORS_ALLOW_ALL_ORIGINS= True
 
 STORAGES = {
     "default": {
