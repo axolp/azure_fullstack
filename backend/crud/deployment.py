@@ -23,11 +23,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# to na azure 'https://happy-island-0e3f99610.4.azurestaticapps.net/'
 #Wracam gdy bede wiedzial adres strony
-CORS_ALLOWED_ORIGINS= [
-'https://happy-island-0e3f99610.4.azurestaticapps.net/'
-]
+CORS_ALLOWED_ORIGINS= ['*']
 
 STORAGES = {
     "default": {
