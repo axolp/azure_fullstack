@@ -16,7 +16,7 @@ def home(request):
     serializer= CharacterSerializer(characters, many=True)
     return Response(serializer.data)
 
-@api_view(['POST'])
+@api_view(['POST', 'GET'])
 def register(request):
     username= request.data['username']
     password= request.data['password']
