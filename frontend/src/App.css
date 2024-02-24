@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #fff1f1; /* Jasny czerwony tło dla całej aplikacji */
+  color: #4e0d0d; /* Ciemnoczerwony kolor tekstu */
 }
 
 .App-logo {
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #a83232; /* Ciemniejszy czerwony */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +27,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #f7b2b2; /* Jasny czerwony */
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +37,100 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background-color: white; /* Bardzo jasny czerwony dla tła */
+}
+
+.character, .character2 {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.character:hover, .character2:hover {
+  transform: scale(1.5);
+}
+
+.CharacterContainer {
+  height:2em;
+  width:2em; 
+  display: inline-block;
+  font-size: 40px; /* Poprawka: dodano jednostkę */
+  border-radius: 32px;
+  border-radius: 37px;
+  
+  
+}
+
+.CharacterContainer:hover {
+  transform: scale(1.1); /* Subtelniejsza transformacja */
+  background-color: #ffbaba; /* Nieco jaśniejszy czerwony */
+  
+}
+
+.CharacterContainer:hover{
+  border-radius: 37px;
+background: #ffffff;
+box-shadow: inset 17px 17px 54px #969696,
+            inset -17px -17px 54px #ffffff;
+}
+
+.PinYinContainer {
+  color: transparent;
+  font-size: 15px; /* Zmniejszony rozmiar fontu */
+}
+.PinYinContainer:hover{
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #f8d7da; /* Jasny czerwony */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease; /* Dodano płynną transformację */
+}
+
+.grid-item:hover {
+  transform: scale(1.05); /* Lekkie powiększenie i subtelniejsza transformacja */
+}
+
+img {
+  max-height: 300px; /* Zmieniono na max-height, aby zachować proporcje */
+  max-width: 100%; /* Zapewnia, że obraz nie wyjdzie poza kontener */
+  border-radius: 4px; /* Dodano zaokrąglenie narożników obrazu */
+}
+.AngContainer{
+  font-size: 20px;
+  color:transparent;
+}
+
+.AngContainer:hover{
+  
+  color:black
+}
+.neo{
+  border-radius: 50px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+background: #e0e0e0;
+box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+.videoPlayer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
