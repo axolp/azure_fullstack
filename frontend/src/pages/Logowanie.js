@@ -20,7 +20,7 @@ function Logowanie() {
             password: e.target.password.value,
         };
 
-        let response= await fetch('http://127.0.0.1:8000/api/logowanie/',{
+        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/logowanie/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
@@ -29,6 +29,7 @@ function Logowanie() {
             });
 
             let data= await response.json()
+            console.log(data)
             console.log(response.ok)
 
             if(! response.ok){

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// https://chn-apex-backend.azurewebsites.net/api/register/
+
 function RegistrationForm() {
     const navigate = useNavigate();
     const strongPasswordRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,}$');
@@ -33,7 +35,7 @@ function RegistrationForm() {
 
         if(Validate(e) == true){
     
-            let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/register',{
+            let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/register/',{
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json' 
@@ -50,6 +52,7 @@ function RegistrationForm() {
        
 
         let data= await response.json()
+        console.log(data)
         console.log(data.message)
 
         if(response.ok){
