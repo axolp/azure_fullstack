@@ -55,7 +55,7 @@ body {
 
 .CharacterContainer {
   height:2em;
-  width:2em; 
+   
   display: inline-block;
   font-size: 40px; /* Poprawka: dodano jednostkę */
   border-radius: 32px;
@@ -75,6 +75,12 @@ body {
 background: #ffffff;
 box-shadow: inset 17px 17px 54px #969696,
             inset -17px -17px 54px #ffffff;
+}
+.CharacterContainer > div { /* Ta reguła dotyczy wszystkich dzieci div elementu z klasą CharacterContainer */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .PinYinContainer {

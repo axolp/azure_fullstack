@@ -20,7 +20,7 @@ function Logowanie() {
             password: e.target.password.value,
         };
 
-        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/logowanie/',{
+        let response= await fetch('http://127.0.0.1:8000/api/logowanie/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
@@ -29,17 +29,18 @@ function Logowanie() {
             });
 
             let data= await response.json()
-            console.log(data)
-            console.log(response.ok)
+            const user_id= data['user_id'];
+            console.log(data['user_id']);
+            console.log(response.ok);
 
             if(! response.ok){
-                setMessage(data.message)
-                console.log(data.message)
+                setMessage(data.message);
+                console.log(data.message);
             }
             else{
                 //tutaj chce dodac tworzenie sesji dla zalgoowanego uzytkownika
                 console.log(newFormData)
-                sessionStorage.setItem('user', newFormData.username)
+                sessionStorage.setItem('user_id', user_id);
                 console.log(sessionStorage)
                 navigate('/home')
             }
