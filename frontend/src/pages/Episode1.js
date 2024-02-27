@@ -19,7 +19,7 @@ function Episode1() {
             video_id: 'n8J0t7oKHTQ',
         }
 
-        let response= await fetch('http://127.0.0.1:8000/api/addflashcard/',{
+        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/addflashcard/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
