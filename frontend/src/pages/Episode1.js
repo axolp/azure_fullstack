@@ -8,18 +8,34 @@ function Episode1() {
     const [ct, sCT]= useState(null);
     const lyricsDivRef= useRef(null);
     const [fContent, setFContent]= useState(null);
+    const [sentence, setSentence]= useState("");
 
 
     const addFlashcard= async (e) => {
+        let endTime= 0;
+        console.log("bede zaczytawac długosc trwania wideo");
+        console.log("ctL ", ct);
+        for(let i= ct+1; i<ct+20; i++){
+            if(tr[i]){
+                console.log("tutaj konczy sie klip: ", i);
+                endTime= i;
+                break;
+            }
+        }
+        
 
         const flashcard= {
             content:fContent,
             user_id: sessionStorage['user_id'],
+            sentence: sentence,
             current_time: ct,
+            duration_time_in_video: endTime,
             video_id: 'n8J0t7oKHTQ',
+            
         }
+        console.log(flashcard);
 
-        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/addflashcard/',{
+        let response= await fetch('chn-apex-backend.azurewebsites.net/api/addflashcard/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
@@ -127,6 +143,8 @@ function Episode1() {
               DeleteCharacterDivs();
 
               sentence= tr[currentTime][0];
+              setSentence(sentence);
+              
               let hanzi= "";
               let pinyin= "";
               let def= "";
@@ -151,7 +169,7 @@ function Episode1() {
     return (
         <div className='videoPlayer'>
             <div id="player"></div> 
-            {}
+        
             <div ref= {lyricsDivRef} className='neo'>
 
             </div>

@@ -1,0 +1,28 @@
+nav {
+    background-color: #f2f2f2; /* Jasne tło */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtelne cieniowanie */
+    font-family: 'Arial', sans-serif; /* Prosta typografia */
+}
+
+nav ul {
+    list-style: none; /* Usuń punktory listy */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Elementy menu obok siebie */
+    justify-content: flex-start; /* Wyjustuj do lewej strony */
+}
+
+nav ul li {
+    margin: 0 20px; /* Dodaj trochę miejsca między elementami */
+}
+
+nav ul li a {
+    text-decoration: none; /* Usuń podkreślenie z linków */
+    color: #333; /* Ciemnoszary tekst */
+    font-size: 16px; /* Rozsądny rozmiar czcionki */
+    transition: color 0.3s; /* Animacja zmiany koloru */
+}
+
+nav ul li a:hover {
+    color: #666; /* Zmień kolor podczas najechania */
+}

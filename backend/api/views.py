@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from .serializers import FlashcardsSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .serializers import CharacterSerializer
@@ -12,13 +13,22 @@ from api.commonFunctions.functions import anki, superMemo
 
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def getFlashcards(request):
-
-    return Response("get Flashcards-test")
+    
+    user_id= request.data['user_id']
+    flashcards= Flashcard.objects.filter(user_id=user_id)
+    serializer= FlashcardsSerializer(flashcards, many=True)
+  
+    print(user_id)
+    print("flashcards", flashcards)
+    print("serializer: ", serializer)
+    print(".data: ", serializer.data)
+    return Response(serializer.data)
 
 @api_view(['POST'])
 def addFlashcard(request):
+    print(request.data)
     user_id= request.data['user_id']
 
     text= request.data['content'].splitlines()
@@ -27,8 +37,8 @@ def addFlashcard(request):
     definition= text[0]
     character= text[1]
     pinyin= text[2]
-
     video_time= request.data['current_time']
+    durration= request.data['duration_time_in_video']
     print(definition, character, pinyin)
 
     new_flashcard = Flashcard(
@@ -41,6 +51,7 @@ def addFlashcard(request):
         EF= 2.5,
         n= 0,
         interval= 0,
+        duration_time_in_video= durration,
         # Uzupełnij pozostałe pola zgodnie z potrzebami
     )
 

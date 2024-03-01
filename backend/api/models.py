@@ -15,7 +15,7 @@ class Flashcard(models.Model):
     definition = models.TextField()
     sentence = models.TextField(blank=True, null=True)
     video_id = models.ForeignKey('Videos', on_delete=models.CASCADE)
-    second_in_video = models.IntegerField()
+    second_in_video = models.IntegerField(blank=True, null=True)
     duration_time_in_video = models.IntegerField(blank=True, null=True)
     EF = models.FloatField()
     n = models.IntegerField()
@@ -39,11 +39,7 @@ class Character(models.Model):
     def __str__(self):
         return self.character
     
-class Fiszka(models.Model):
-    character= models.TextField()
-    pinyin= models.TextField()
-    definition= models.TextField()
-    difficulti= models.FloatField()
+
 
 
 

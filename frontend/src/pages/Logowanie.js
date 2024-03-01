@@ -20,7 +20,7 @@ function Logowanie() {
             password: e.target.password.value,
         };
 
-        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/logowanie/',{
+        let response= await fetch('chn-apex-backend.azurewebsites.net/api/logowanie/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
