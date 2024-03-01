@@ -35,7 +35,7 @@ function RegistrationForm() {
 
         if(Validate(e) == true){
     
-            let response= await fetch('chn-apex-backend.azurewebsites.net/api/register/',{
+            let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/register/',{
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json' 

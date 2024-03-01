@@ -70,7 +70,7 @@ function Flashcards() {
             user_id: sessionStorage['user_id'],
         }
 
-        let response= await fetch('chn-apex-backend.azurewebsites.net/api/getflashcards/',{
+        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/getflashcards/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON

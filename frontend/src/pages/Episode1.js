@@ -35,7 +35,7 @@ function Episode1() {
         }
         console.log(flashcard);
 
-        let response= await fetch('chn-apex-backend.azurewebsites.net/api/addflashcard/',{
+        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/addflashcard/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
