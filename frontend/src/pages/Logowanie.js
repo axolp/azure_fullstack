@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
+//zmienilem na cudzyslowy
 function Logowanie() {
     const navigate = useNavigate();
     const [message, setMessage]= useState(null);
     const [formData, setFormData] = useState({
-        username: '',
-        password: '',
+        username: "",
+        password: "",
     });
 
     
@@ -20,7 +20,7 @@ function Logowanie() {
             password: e.target.password.value,
         };
 
-        let response= await fetch('chn-apex-backend.azurewebsites.net/api/logowanie/',{
+        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/logowanie/',{
                 method: 'POST', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
