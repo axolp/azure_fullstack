@@ -9,15 +9,43 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework import  status
 from api.commonFunctions.functions import anki, superMemo
+import datetime
+from django.utils import timezone
 
 
+@api_view(['PATCH'])
+def patchInterval(request):
+    print("now: ",datetime.datetime.now())
+    print("request data: ",request.data)
+    fiszka_id= request.data['fiszka_id']
+    user_grade= request.data['user_grade']
+
+    flashcard= Flashcard.objects.get(fiszka_id=fiszka_id)
+    print(flashcard.EF)
+    new_n, new_EF, new_interval= superMemo(int(user_grade), int(flashcard.n), float(flashcard.EF), flashcard.interval)
+    flashcard.n= new_n
+    flashcard.interval= str(new_interval)
+    flashcard.EF= new_EF
+    flashcard.last_display_date= datetime.datetime.now()
+
+    if new_interval == '10 minut' or new_interval == '15 minut':
+        next_time_display= datetime.datetime.now() + datetime.timedelta(minutes=int(new_interval[:2]))
+    else:
+        next_time_display= datetime.datetime.now() + datetime.timedelta(days=int(new_interval))
+    
+    flashcard.next_display_date= next_time_display
+    print("next display time: ", next_time_display)
+
+    flashcard.save()
+    print("nowe parametry: ", new_n, new_EF, new_interval)
+    return Response("zmienilem trudnosc i interval fiszki")
 
 
 @api_view(['POST'])
 def getFlashcards(request):
     
     user_id= request.data['user_id']
-    flashcards= Flashcard.objects.filter(user_id=user_id)
+    flashcards= Flashcard.objects.filter(user_id=user_id, next_display_date__lte = datetime.datetime.now())
     serializer= FlashcardsSerializer(flashcards, many=True)
   
     print(user_id)
@@ -52,6 +80,7 @@ def addFlashcard(request):
         n= 0,
         interval= 0,
         duration_time_in_video= durration,
+        next_display_date= datetime.datetime.now(),
         # Uzupełnij pozostałe pola zgodnie z potrzebami
     )
 

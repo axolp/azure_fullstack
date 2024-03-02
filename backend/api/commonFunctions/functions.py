@@ -13,7 +13,7 @@ def superMemo(user_grade, prev_n, prev_EF, prev_interval):
              if prev_interval == "10 minut" or prev_interval == '15 minut':
                  interval= 2
              else: 
-                interval= math.floor(prev_interval*prev_EF*1)
+                interval= math.floor(int(prev_interval)*prev_EF*1)
         n= prev_n +1
 
     elif user_grade == 4:
@@ -25,7 +25,7 @@ def superMemo(user_grade, prev_n, prev_EF, prev_interval):
             if prev_interval == "10 minut" or prev_interval == '15 minut':
                  interval= 3
             else: 
-                interval= math.floor(prev_interval*prev_EF*2)
+                interval= math.floor(int(prev_interval)*prev_EF*2)
      n= prev_n +1
 
     elif user_grade == 5:
@@ -37,7 +37,7 @@ def superMemo(user_grade, prev_n, prev_EF, prev_interval):
             if prev_interval == "10 minut" or prev_interval == '15 minut':
                  interval= 5
             else: 
-                interval= math.ceil(prev_interval*prev_EF*3)
+                interval= math.ceil(int(prev_interval)*prev_EF*3)
      n= prev_n +1
         
     else: #jeśli odpowiedz uzytkownika była mniej niz 3 czyli źle odpowiedzial

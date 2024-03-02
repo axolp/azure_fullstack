@@ -19,9 +19,9 @@ class Flashcard(models.Model):
     duration_time_in_video = models.IntegerField(blank=True, null=True)
     EF = models.FloatField()
     n = models.IntegerField()
-    interval = models.IntegerField()
-    last_display_date = models.DateField(blank=True, null=True)
-    next_display_date = models.DateField(blank=True, null=True)
+    interval = models.TextField()
+    last_display_date = models.DateTimeField(blank=True, null=True)
+    next_display_date = models.DateTimeField(blank=True, null=True)
 
 class Videos(models.Model):
     video_id = models.AutoField(primary_key=True)

@@ -81,24 +81,32 @@ function Flashcards() {
             let data= await response.json()
             //console.log("data", data.length);
             //console.log("fiszki 0: ", data['0']);
+            console.log("data: ", data);
             setFiszki(data);
             //console.log(response.ok)
             //setCurrentFiszka(data[nFiszka])
 
     }
 
-    const anki= async (e) => {
+    const anki= async (event) => {
 
-        const user_id= {
-            user_id: sessionStorage['user_id'],
+        console.log("wcisnalez guzik");
+        const userGrade= event.target.innerText;
+        console.log(userGrade);
+        console.log("fiszka id: ", fiszki[currentIndex]['fiszka_id']);
+        let fiszka_id= fiszki[currentIndex]['fiszka_id'];
+
+        const message= {
+            fiszka_id: fiszka_id,
+            user_grade: userGrade,
         }
 
-        let response= await fetch('http://127.0.0.1:8000/api/getflashcards/',{
-                method: 'POST', // Określenie metody HTTP
+        let response= await fetch('https://chn-apex-backend.azurewebsites.net/api/changeInterval/',{
+                method: 'PATCH', // Określenie metody HTTP
                 headers: {
                     'Content-Type': 'application/json' // Określenie typu zawartości jako JSON
                 },
-                body: JSON.stringify(user_id) // Przekształcenie danych obiektu JavaScript na ciąg JSON
+                body: JSON.stringify(message) // Przekształcenie danych obiektu JavaScript na ciąg JSON
             });
           
             let data= await response.json()
@@ -134,11 +142,12 @@ function Flashcards() {
                     </div>
                 )}
                 <h1>How difficult is the flashcard?</h1>
-                <button>0</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
+                <button onClick={(e)=>anki(e)} >0</button>
+                <button onClick={(e)=>anki(e)}>1</button>
+                <button onClick={(e)=>anki(e)}>2</button>
+                <button onClick={(e)=>anki(e)}>3</button>
+                <button onClick={(e)=>anki(e)}>4</button>
+                <button onClick={(e)=>anki(e)}>5</button>
             </div>
         </>
     );

@@ -7,4 +7,5 @@ urlpatterns= [
     path('logowanie/', logowanie),
     path('addflashcard/', addFlashcard),
     path('getflashcards/', getFlashcards),
+    path('changeInterval/', patchInterval),
 ]
