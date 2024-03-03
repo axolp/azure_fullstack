@@ -15,6 +15,9 @@ class Fiszka(models.Model):
     # Tutaj dodajesz pola dla swojego modelu, na przykład:
     pytanie = models.TextField(blank=True, null=True)
     odpowiedz = models.TextField(blank=True, null=True)
+    character= models.TextField()
+    pinyin= models.TextField()
+    definition= models.TextField()
     # Dodaj więcej pól zgodnie z potrzebami
 
     def __str__(self):
