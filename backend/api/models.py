@@ -4,17 +4,17 @@ from django.contrib.auth.models import User
 
 class api_fiszka(models.Model):
     # Tutaj dodajesz pola dla swojego modelu, na przykład:
-    pytanie = models.CharField(max_length=255)
-    odpowiedz = models.CharField(max_length=255)
-    test = models.CharField(max_length=255)
+    pytanie = models.TextField(blank=True, null=True)
+    odpowiedz = models.TextField(blank=True, null=True)
+    test =models.TextField(blank=True, null=True)
     # Dodaj więcej pól zgodnie z potrzebami
 
     def __str__(self):
         return self.pytanie  # lub inna reprezentacja Twojego wyboru
 class Fiszka(models.Model):
     # Tutaj dodajesz pola dla swojego modelu, na przykład:
-    pytanie = models.CharField(max_length=255)
-    odpowiedz = models.CharField(max_length=255)
+    pytanie = models.TextField(blank=True, null=True)
+    odpowiedz = models.TextField(blank=True, null=True)
     # Dodaj więcej pól zgodnie z potrzebami
 
     def __str__(self):
