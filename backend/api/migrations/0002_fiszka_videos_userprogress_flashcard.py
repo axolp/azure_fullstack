@@ -13,16 +13,16 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Fiszka',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('character', models.TextField()),
-                ('pinyin', models.TextField()),
-                ('definition', models.TextField()),
-                ('difficulti', models.FloatField()),
-            ],
-        ),
+      #  migrations.CreateModel(
+       #     name='Fiszka',
+        #    fields=[
+         #       ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+          #      ('character', models.TextField()),
+           #     ('pinyin', models.TextField()),
+            #    ('definition', models.TextField()),
+             #   ('difficulti', models.FloatField()),
+            #],
+        #),
         migrations.CreateModel(
             name='Videos',
             fields=[
