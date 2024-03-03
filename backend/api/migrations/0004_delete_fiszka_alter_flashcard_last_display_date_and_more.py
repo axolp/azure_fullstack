@@ -10,9 +10,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.DeleteModel(
-            name='Fiszka',
-        ),
+        #migrations.DeleteModel(
+         #   name='Fiszka',
+        #),
         migrations.AlterField(
             model_name='flashcard',
             name='last_display_date',
