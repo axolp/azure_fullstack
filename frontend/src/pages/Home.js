@@ -28,7 +28,7 @@ function Home(){
         },
       };
     const episodes = [
-        { title: "Patriotyzm", description: "For the topic I am going to talk about today, what is patriotism? I think it's important to appreciate some aspects. If it weren't for these, what kind of country do you love?", thumbnail: "episode1.jpg", hsk_histogram: {1: 190, 789: 111, 2: 65, 3: 36, 4: 16, 5: 9, 6: 7}, key_words: {'爱国': 11, '讲': 8, '所以': 7, '牺牲': 5, '不是': 4, '本来': 3, '因为': 3, '很多': 3, '就是': 3, '特别': 3} },
+        { title: "Patriotyzm", description: "For the topic I am going to talk about today, what is patriotism? I think it's important to appreciate some aspects. If it weren't for these, what kind of country do you love?", thumbnail: "episode1.jpg", hsk_histogram: {1: 698, 789: 276, 2: 171, 3: 93, 4: 50, 5: 17, 6: 13}, key_words: {'爱国': 11, '讲': 8, '所以': 7, '牺牲': 5, '不是': 4, '本来': 3, '因为': 3, '很多': 3, '就是': 3, '特别': 3} },
         { title: "TED TALK", description: "Opis odcinka 2", thumbnail: "episode2.jpg", hsk_histogram: {1: 190, 789: 111, 2: 65, 3: 36, 4: 16, 5: 9, 6: 7}, key_words: {'爱国': 11, '讲': 8, '所以': 7, '牺牲': 5, '不是': 4, '本来': 3, '因为': 3, '很多': 3, '就是': 3, '特别': 3}},
       ];
 

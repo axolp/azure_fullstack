@@ -123,8 +123,9 @@ function Flashcards() {
             <div>
             <div id="player"></div>
                 <h1>Fiszki page</h1>
-                
+                <h1>
                 {fiszki !== null && fiszki[currentIndex] &&(fiszki[currentIndex]['character'])}
+                </h1>
                 <button onClick={nextFlashcard}>Kliknij aby przjesc do nastepnej fiszki</button>
                 <button onClick={handleBack}>Kliknij zobaczyc back</button>
                 
@@ -133,7 +134,8 @@ function Flashcards() {
                      
                         <h1>
                             <div id= 'flashcardContent'>
-                            Character{fiszki[currentIndex]['character']}
+                        
+                            Character{fiszki[currentIndex]['character']}<br></br>
                             Definicja: {fiszki[currentIndex]['definition']}<br></br>
                            Pin Yin:  {fiszki[currentIndex]['pin_yin']}<br></br>
                             Zdanie: {fiszki[currentIndex]['sentence']}

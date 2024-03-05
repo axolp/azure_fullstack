@@ -1,0 +1,40 @@
+form {
+    background-color: #f2f2f2; /* jasnoszary tło, dla spokojnego wyglądu */
+    padding: 20px; /* dodaje przestrzeń wokół zawartości formularza */
+    border-radius: 5px; /* lekko zaokrągla rogi dla subtelniejszego wyglądu */
+    max-width: 400px; /* ustawia maksymalną szerokość formularza */
+    margin: auto; /* centruje formularz na stronie */
+}
+
+label {
+    font-weight: bold; /* czyni tekst etykiety pogrubionym */
+    margin-bottom: 10px; /* dodaje odstęp na dole etykiety */
+    display: block; /* sprawia, że etykiety zajmują całą szerokość, formanty znajdują się pod nimi */
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%; /* sprawia, że pola tekstowe zajmują całą dostępną szerokość */
+    padding: 8px; /* dodaje przestrzeń wewnętrzną, aby tekst był łatwiejszy do odczytania */
+    margin-bottom: 20px; /* dodaje odstęp na dole każdego pola tekstowego */
+    border-radius: 4px; /* lekko zaokrągla rogi pól tekstowych */
+    border: 1px solid #ccc; /* dodaje subtelne obramowanie do pól tekstowych */
+}
+
+button {
+    background-color: #4CAF50; /* zielony kolor tła */
+    color: white; /* biały tekst */
+    padding: 10px 15px; /* dodaje przestrzeń wokół tekstu na przycisku */
+    border: none; /* usuwa obramowanie przycisku */
+    border-radius: 4px; /* zaokrągla rogi przycisku */
+    cursor: pointer; /* zmienia kursor na wskaźnik, gdy najedzie się na przycisk */
+}
+
+button:hover {
+    background-color: #45a049; /* nieco ciemniejszy odcień zielonego dla przycisku po najechaniu */
+}
+
+div {
+    margin-bottom: 12px; /* dodaje odstęp między polami formularza */
+}
