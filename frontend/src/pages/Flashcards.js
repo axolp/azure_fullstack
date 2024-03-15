@@ -110,6 +110,7 @@ function Flashcards() {
             });
           
             let data= await response.json()
+            nextFlashcard();
            
     }
 
@@ -126,7 +127,7 @@ function Flashcards() {
                 <h1>
                 {fiszki !== null && fiszki[currentIndex] &&(fiszki[currentIndex]['character'])}
                 </h1>
-                <button onClick={nextFlashcard}>Kliknij aby przjesc do nastepnej fiszki</button>
+                
                 <button onClick={handleBack}>Kliknij zobaczyc back</button>
                 
                 {backIndex !== 0 && fiszki != null && fiszki[currentIndex] && (
@@ -134,7 +135,7 @@ function Flashcards() {
                      
                         <h1>
                             <div id= 'flashcardContent'>
-                        
+                            {console.log("dlugosc fiszki: ", fiszki.length)}
                             Character{fiszki[currentIndex]['character']}<br></br>
                             Definicja: {fiszki[currentIndex]['definition']}<br></br>
                            Pin Yin:  {fiszki[currentIndex]['pin_yin']}<br></br>
@@ -143,7 +144,19 @@ function Flashcards() {
                         </h1>
                     </div>
                 )}
-                <h1>How difficult is the flashcard?</h1>
+
+                {currentIndex == fiszki.length &&(
+                    <div>
+                        <h1>Zrobiłes juz wszystkie fiszki!!!</h1>
+                    </div>
+                )}
+
+                {fiszki.length == 0 &&(
+                    <div>
+                        <h1>Nie masz fiszek do odrobienia, dodaje je studiując episyd lub poczekaj gdy znowu będą dostępne</h1>
+                    </div>
+                )}
+                <h1>How easy was the flashcard?</h1>
                 <button onClick={(e)=>anki(e)} >0</button>
                 <button onClick={(e)=>anki(e)}>1</button>
                 <button onClick={(e)=>anki(e)}>2</button>

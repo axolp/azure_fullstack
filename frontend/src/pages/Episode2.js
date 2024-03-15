@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import tr from '../transcrypts/episode1';
 
-function Episode1() {
+function Episode2() {
   
     const videoRef = useRef(null); // Referencja do playera YouTube
     const intervalRef = useRef(null); // Referencja do interwału
@@ -147,7 +147,7 @@ function Episode1() {
             videoRef.current = new window.YT.Player('player', {
                 height: '540',
                 width: '960',
-                videoId: 'n8J0t7oKHTQ', // Twoje ID wideo
+                videoId: 'NUtSnIiQh5c', // Twoje ID wideo
                 playerVars: {
                     autoplay: 1, // Włącza autoodtwarzanie
                     // Możesz dodać więcej zmiennych odtwarzacza tutaj, jeśli potrzebujesz
@@ -217,4 +217,4 @@ function Episode1() {
     );
 }
 
-export default Episode1;
+export default Episode2;

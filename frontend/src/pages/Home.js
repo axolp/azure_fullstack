@@ -19,7 +19,7 @@ function Home(){
         responsive: true,
         plugins: {
           legend: {
-            position: 'right',
+            position: 'bottom',
           },
           title: {
             display: true,
@@ -44,8 +44,9 @@ function Home(){
             
             
             
-            <h2>{episode.title}</h2>
+            
             <img src={`/thumbnails/${episode.thumbnail}`}   alt="Episode thumbnail"></img>
+            <h2>{episode.title}</h2>
             <p>{episode.description}</p>
 
             
@@ -73,6 +74,8 @@ function Home(){
           </div>
         ))}
       </div>
+
+      
       </div>
 
 

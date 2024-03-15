@@ -5,6 +5,7 @@ const Menu = () => {
     return (
         <nav>
             <ul>
+                <li><Link to="/home"><img src='logowisecut.PNG'   alt="logo" style= {{width:128+'px', height:128+'px'}}></img> </Link></li>
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/register">Rejestracja</Link></li>
                 <li><Link to="/login">Logowanie</Link></li>

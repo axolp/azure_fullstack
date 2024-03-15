@@ -2,6 +2,7 @@ nav {
     background-color: #f2f2f2; /* Jasne tło */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtelne cieniowanie */
     font-family: 'Arial', sans-serif; /* Prosta typografia */
+   
 }
 
 nav ul {
@@ -19,7 +20,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none; /* Usuń podkreślenie z linków */
     color: #333; /* Ciemnoszary tekst */
-    font-size: 16px; /* Rozsądny rozmiar czcionki */
+    font-size: 3em; /* Rozsądny rozmiar czcionki */
     transition: color 0.3s; /* Animacja zmiany koloru */
 }
 
