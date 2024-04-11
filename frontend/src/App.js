@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
+
 import DisplayCharacter from './pages/DisplayCharacters';
 import RegistrationForm from './pages/Registration';
 import Logowanie from './pages/Logowanie';
@@ -11,12 +13,25 @@ import Flashcards from './pages/Flashcards';
 import Menu from './components/menu';
 import Info from './pages/Info';
 import ChartPage from './pages/ChartPage'
+import Sidebar from './components/sb_menu';
+import { LuMenuSquare } from "react-icons/lu";
 
 function App() {
+
+  const [showBar, setShowBar] = useState(false);
+
   return (
     <Router>
+      
       <div>
-        <Menu/>
+
+      <header>
+        <LuMenuSquare onClick={() => setShowBar(!showBar)} />
+      </header>
+      <Sidebar show={showBar} />
+
+        {/*<Menu/>*/}
+       
       
         <Routes>
           <Route path="/register" element={<RegistrationForm />} />

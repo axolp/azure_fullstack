@@ -145,3 +145,81 @@ box-shadow:  20px 20px 60px #bebebe,
   align-items: center;
   justify-content: center;
 }
+
+/*ponizej jest kod od macka*/
+
+.App {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto', sans-serif;
+  color: aliceblue;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto', sans-serif;
+  color: aliceblue;
+}
+
+header {
+  padding: 30px;
+  background: #011627;
+  height: 30px;
+}
+
+.sidebar {
+  width: 240px;
+  background: #011627;
+  position: fixed;
+  height: 95vh;
+  padding: 0 30px;
+  transition: all 1s;
+  outline: none; 
+  left:-100%;
+  z-index: 1000;
+}
+.sidebar.active{
+  left: 0;
+}
+ul{
+  padding: 0;
+}
+ul li{
+  list-style-type: none;
+}
+ul li a{
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+ul li a:hover,
+ul li a.ctive {
+  background: #093960;;
+}
+
+.Logo{
+  width: 50px;
+}
+header svg{
+  font-size: 40px;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.DataChart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 1000px;
+}
