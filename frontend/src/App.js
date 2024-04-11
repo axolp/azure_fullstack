@@ -10,6 +10,7 @@ import Episode2 from './pages/Episode2';
 import Flashcards from './pages/Flashcards';
 import Menu from './components/menu';
 import Info from './pages/Info';
+import ChartPage from './pages/ChartPage'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/login" element={<Logowanie />} />
           <Route path="/home" element={<Home />} />
+          <Route path="smartbear/groupChart" element={<ChartPage />} />
             <Route path="/home/episode1" element={<Episode1/>}></Route>
             <Route path="/home/episode2" element={<Episode2/>}></Route>
             <Route path="/flashcards" element={<Flashcards/>}/>
