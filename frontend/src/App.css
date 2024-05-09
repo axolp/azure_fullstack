@@ -41,8 +41,9 @@
 
 body {
   font-family: 'Noto Sans SC', sans-serif;
-  background-color: white; /* Bardzo jasny czerwony dla tła */
+  background-color: gray; /* Bardzo jasny czerwony dla tła */
   font-family: 'Roboto Condensed', sans-serif;
+  text-decoration: none;
   
 }
 
@@ -103,11 +104,10 @@ box-shadow: inset 17px 17px 54px #969696,
 
 .grid-item {
  
-  border-radius: 20px;
-  padding: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease; /* Dodano płynną transformację */
-  border: solid gray 1px;
+  border-radius: 55px;
+  background: #ffffff;
+  box-shadow:  49px 49px 98px #dbdbdb,
+               -49px -49px 98px #ffffff;
   text-decoration: none;
 }
 
@@ -222,4 +222,11 @@ header svg{
   align-items: center;
   height: 500px;
   width: 1000px;
+}
+p{
+  text-decoration: none;
+}
+
+.transcrypt{
+  width: 600px;
 }

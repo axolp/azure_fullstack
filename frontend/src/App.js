@@ -15,22 +15,28 @@ import Info from './pages/Info';
 import ChartPage from './pages/ChartPage'
 import Sidebar from './components/sb_menu';
 import { LuMenuSquare } from "react-icons/lu";
+import { Link } from 'react-router-dom';
 
 function App() {
 
-  const [showBar, setShowBar] = useState(false);
 
   return (
     <Router>
       
       <div>
+      <nav>
+      <ul>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/register">Register</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/flashcards">Flashcards</Link></li>
+        <li><Link to="/info">About</Link></li>
+        
+      </ul>
+    </nav>
+      
 
-      <header>
-        <LuMenuSquare onClick={() => setShowBar(!showBar)} />
-      </header>
-      <Sidebar show={showBar} />
-
-        {/*<Menu/>*/}
+       
        
       
         <Routes>

@@ -195,7 +195,7 @@ function Episode1() {
                 pinyin= tr[currentTime][1][i];
                 def= tr[currentTime][2][i];
                 CreateCharacterDiv(hanzi, pinyin, def);
-                //TranscryptCharacterDiv(hanzi, pinyin, def);
+                TranscryptCharacterDiv(hanzi, pinyin, def);
               }
             }
           
